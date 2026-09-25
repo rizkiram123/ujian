@@ -62,7 +62,7 @@ class _NeumorphicButtonState extends State<NeumorphicButton> {
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
-              mainAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (widget.icon != null) ...[
                   Icon(widget.icon, color: Colors.white, size: 20),
@@ -104,7 +104,7 @@ class _NeumorphicButtonState extends State<NeumorphicButton> {
               ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
-          mainAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (widget.icon != null) ...[
               Icon(

@@ -30,7 +30,6 @@ class NeumorphicCard extends StatefulWidget {
 }
 
 class _NeumorphicCardState extends State<NeumorphicCard> {
-  bool _isHovered = false;
   bool _isTapped = false;
 
   @override
@@ -43,28 +42,24 @@ class _NeumorphicCardState extends State<NeumorphicCard> {
       onTapUp: widget.onTap != null ? (_) => setState(() => _isTapped = false) : null,
       onTapCancel: widget.onTap != null ? () => setState(() => _isTapped = false) : null,
       onTap: widget.onTap,
-      child: MouseRegion(
-        onEnter: (_) => setState(() => _isHovered = true),
-        onExit: (_) => setState(() => _isHovered = false),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 150),
-          width: widget.width,
-          height: widget.height,
-          padding: widget.padding,
-          decoration: pressed
-              ? NeumorphicDecoration.inset(
-                  isDarkMode: isDarkMode,
-                  borderRadius: widget.borderRadius,
-                  customColor: widget.backgroundColor,
-                )
-              : NeumorphicDecoration.flat(
-                  isDarkMode: isDarkMode,
-                  borderRadius: widget.borderRadius,
-                  customColor: widget.backgroundColor,
-                  border: widget.border,
-                ),
-          child: widget.child,
-        ),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 150),
+        width: widget.width,
+        height: widget.height,
+        padding: widget.padding,
+        decoration: pressed
+            ? NeumorphicDecoration.inset(
+                isDarkMode: isDarkMode,
+                borderRadius: widget.borderRadius,
+                customColor: widget.backgroundColor,
+              )
+            : NeumorphicDecoration.flat(
+                isDarkMode: isDarkMode,
+                borderRadius: widget.borderRadius,
+                customColor: widget.backgroundColor,
+                border: widget.border,
+              ),
+        child: widget.child,
       ),
     );
   }
